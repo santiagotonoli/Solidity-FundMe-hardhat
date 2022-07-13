@@ -1,0 +1,4 @@
+Unit test are done locally
+- local hardhat
+
+Staging tests can be done on a testnet (Last step)
