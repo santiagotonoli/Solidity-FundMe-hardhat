@@ -1,5 +1,5 @@
 const {deployments, ethers, getNamedAccounts} = require("hardhat")
-const { assert } = require("chai")
+const { assert, expect } = require("chai")
 
 
 describe("FundMe", async function (){
@@ -29,9 +29,13 @@ describe("FundMe", async function (){
         })
     })
 
-    // describe("fund", asynx function () {
+    describe("fund", async function () {
+        it("Fails if you don't send enough ETH", async function(){
+            await expect(fundMe.fund()).to.be.revertedWith(
+                "You need to spend more ETH!"
+            )
+        })
 
-
-    // })
+    })
 
 })
